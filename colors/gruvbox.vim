@@ -76,6 +76,10 @@ if !exists('g:gruvbox_contrast_light')
   let g:gruvbox_contrast_light='medium'
 endif
 
+if !exists('g:gruvbox_transparent')
+  let g:gruvbox_transparent=0
+endif
+
 let s:is_dark=(&background == 'dark')
 
 " }}}
@@ -169,6 +173,8 @@ call s:Color('faded_blue',     ['#076678', 24])      " 7-102-120
 call s:Color('faded_purple',   ['#8f3f71', 96])      " 143-63-113
 call s:Color('faded_aqua',     ['#427b58', 65])      " 66-123-88
 call s:Color('faded_orange',   ['#af3a03', 130])     " 175-58-3
+
+call s:Color('transparent',   ['transparent', 0])     " 175-58-3
 
 " }}}
 " Setup Emphasis: {{{
@@ -281,6 +287,10 @@ if g:gruvbox_termcolors == 16
   let s:aqua[1]   = 14
   let s:fg1[1]    = 15
 endif
+
+if g:gruvbox_transparent == 1
+  let s:bg0 =as:gb.transparent 
+end
 
 " save current relative colors back to palette dictionary
 call s:Color('bg0', s:bg0)
