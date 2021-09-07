@@ -289,7 +289,7 @@ if g:gruvbox_termcolors == 16
 endif
 
 if g:gruvbox_transparent == 1
-  let s:bg0 =as:gb.transparent 
+  let s:bg0 = s:gb.transparent 
 end
 
 " save current relative colors back to palette dictionary
